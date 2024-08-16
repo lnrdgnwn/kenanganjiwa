@@ -60,7 +60,7 @@ body {
 
 .navbar-nav li {
     list-style: none;
-    padding: 20px;
+    padding: 1.2rem;
 }
 
 .navbar-nav li a {
@@ -90,8 +90,11 @@ body {
 .navbar-icon li a {
     display: inline-block;
     color: #fff;
-    padding: 20px;
     transition: ease .3s;
+}
+
+.navbar-icon li a span {
+    padding: 1rem;
 }
 
 .navbar-icon li a:hover {
@@ -101,6 +104,104 @@ body {
 
 .navbar-icon li#hamburger {
     display: none;
+}
+
+.navbar .search-form {
+    position: absolute;
+    top: 100%;
+    right: 7%;
+    width: 50rem;
+    background-color: #fff;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: .3S;
+}
+
+.navbar .search-form input {
+    width: 100%;
+    height: 100%;
+    font-size: 1.6rem;
+    color: var(--bg);
+    padding: 1rem;
+    border: none;
+    outline: none;
+}
+
+.navbar .search-form label {
+    cursor: pointer;
+    margin: auto;
+    color: var(--bg);
+}
+
+.navbar .search-form label span {
+    cursor: pointer;
+    margin-right: 1.5rem;
+    font-size: 2.5rem;
+    color: var(--bg);
+}
+
+.navbar .search-form.active {
+    transform: scaleY(1);
+}
+
+.navbar .shopping-cart {
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    height: 100vh;
+    width: 35rem;
+    padding: 0 1.5rem;
+    color: var(--bg2);
+    border-left: 1px solid var(--primary);
+    background-color: #fff;
+    transition: ease .3s;
+}
+
+.navbar .shopping-cart .cart-item {
+    margin: 2rem 0;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px dashed var(--bg2);
+    position: relative;
+}
+
+
+
+.navbar .cart-item img {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+}
+
+.navbar .cart-item h3 {
+    font-size: 1.6rem;
+    padding-bottom: 0.5rem;
+}
+
+.navbar .cart-item .item-harga {
+    font-size: 1.2rem;
+    padding-bottom: 0.5rem;
+}
+
+.navbar .cart-item .trash {
+    position: absolute;
+    right: 0;
+    top: 25%;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.navbar .cart-item .trash:hover {
+    color: var(--primary);
+}
+
+.navbar .shopping-cart.active {
+    right: 0;
 }
 
 /* Hero Section */
@@ -267,6 +368,108 @@ body {
 
 #menu .row .menu-card .menu-card-price {
     padding: 1rem;
+}
+
+/* produk css */
+
+.produk {
+    padding: 5rem 7%;
+}
+
+.produk h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.produk h2 span {
+    color: var(--primary);
+}
+
+.produk .produk-content h3 {
+    font-size: 2rem;
+}
+
+.produk .produk-star {
+    font-size: 1.7rem;
+    padding: 0.8rem;
+    color: var(--primary);
+}
+
+.produk .produk-star span.star-full {
+    fill: var(--primary);
+    font-weight: bold;
+}
+
+
+.produk p {
+    margin: auto;
+    padding: 2rem;
+    max-width: 40rem;
+    font-size: 1.5rem;
+    font-weight: 100;
+    text-align: center;
+}
+
+.produk .row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap: 1.5rem;
+    margin-top: 3rem;
+}
+
+.produk .row .produk-card {
+    text-align: center;
+    border: 1px solid #666;
+    padding: 2rem;
+
+}
+
+.produk .produk-icon {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.produk .produk-icon a {
+    width: 4rem;
+    height: 4rem;
+    color: #fff;
+    margin: 0.3rem;
+    border: 1px solid #666;
+    border-radius: 50%;
+    text-decoration: none;
+    justify-content: center;
+    gap: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.produk .produk-icon a:hover {
+    background-color: var(--primary);
+    border: 1px solid var(--primary);
+}
+
+.produk .produk-image {
+    padding: 1rem 0;
+}
+
+.produk .produk-image img {
+    height: 25rem;
+}
+
+.produk .produk-harga {
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.produk .produk-harga span {
+    text-decoration: line-through;
+    font-weight: lighter;
+    font-size: 1rem;
+    color: var(--primary);
+
 }
 
 /* Kontak css */
@@ -448,6 +651,11 @@ footer .credit a:hover {
     .navbar-nav.active {
         right: 0;
     }
+
+    .navbar .search-form {
+        width: 30rem;
+    }
+
 
     .hero-container p {
         mix-blend-mode: difference;
