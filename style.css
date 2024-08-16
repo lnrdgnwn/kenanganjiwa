@@ -152,7 +152,7 @@ body {
     top: 100%;
     right: -100%;
     height: 100vh;
-    width: 35rem;
+    width: 30rem;
     padding: 0 1.5rem;
     color: var(--bg2);
     border-left: 1px solid var(--primary);
@@ -203,6 +203,51 @@ body {
 .navbar .shopping-cart.active {
     right: 0;
 }
+
+.navbar .shopping-cart .total-harga {
+    font-size: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px dashed #010101;
+    text-align: center;
+}
+
+.navbar .customer-detail form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+    gap: 1rem;
+    flex-direction: column;
+}
+
+.navbar .customer-detail input {
+    width: 100%;
+    height: 1rem;
+    padding: 1.5rem 1rem;
+}
+
+.navbar .customer-detail .checkout-btn {
+    padding: 1.3rem;
+    color: #010101;
+    background-color: var(--primary);
+    border: none;
+    border-radius: 0.3rem;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.navbar .customer-detail button:hover {
+    transform: scale(1.1);
+    color: white;
+}
+
+
+#checkout-form .checkout-btn.disabled {
+    cursor: not-allowed;
+}
+
 
 /* Hero Section */
 .hero {
@@ -446,6 +491,10 @@ body {
     align-items: center;
 }
 
+.produk .produk-icon span {
+    padding: 1rem;
+}
+
 .produk .produk-icon a:hover {
     background-color: var(--primary);
     border: 1px solid var(--primary);
@@ -609,6 +658,100 @@ footer .credit a:hover {
     text-decoration: none;
 }
 
+/* Modal CSS */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.modal-container {
+    position: relative;
+    margin: 15%auto;
+    padding: 1.2rem;
+    border: 1px solid #666;
+    width: 80%;
+    height: auto;
+    background-color: #fff;
+    color: #010101;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: animateMdl .5s;
+}
+
+.modal-container a .close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+}
+
+.modal-content {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.modal-content img {
+    height: 20rem;
+    object-fit: cover;
+    margin-right: 2rem;
+}
+
+.modal-content h3 {
+    font-size: 1.8rem;
+}
+
+.modal-content p {
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+    margin-top: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.modal-content a {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    width: 12rem;
+    padding: 1rem 1.6rem;
+    background-color: var(--primary);
+    margin-top: 1rem;
+}
+
+.produk-content .produk-harga {
+    font-size: 1.2rem;
+}
+
+
+.produk-content .produk-harga span {
+    font-size: 1rem;
+    text-decoration: line-through;
+    color: var(--primary);
+}
+
+@keyframes animateMdl {
+    from {
+        top: -300px;
+        opacity: 0;
+    }
+
+    to {
+        top: 0;
+        opacity: 1;
+    }
+
+}
+
 
 /* Media Queries */
 /* Laptop */
@@ -692,6 +835,16 @@ footer .credit a:hover {
         margin-top: 2rem;
         padding: 0;
     }
+
+    .modal-container {
+        padding: 5rem;
+        height: auto;
+    }
+
+    .modal-content {
+        flex-wrap: wrap;
+    }
+
 }
 
 /* Mobile Phone */
