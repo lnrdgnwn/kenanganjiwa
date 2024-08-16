@@ -491,6 +491,10 @@ body {
     align-items: center;
 }
 
+.produk .produk-icon span {
+    padding: 1rem;
+}
+
 .produk .produk-icon a:hover {
     background-color: var(--primary);
     border: 1px solid var(--primary);
