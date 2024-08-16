@@ -35,4 +35,24 @@ document.addEventListener('click', function (e) {
     }
 });
 
+const eyeBtns = document.querySelectorAll('.item-detail-button');
+const closeBtn = document.querySelector('.close');
+const modal = document.querySelector('.modal');
 
+eyeBtns.forEach((eyeBtn) => {
+    eyeBtn.onclick = (e) => {
+        e.preventDefault();
+        modal.style.display = 'flex';
+    };
+});
+
+closeBtn.addEventListener('click', function (e) {
+    modal.style.display = 'none';
+    e.preventDefault();
+});
+
+window.onclick = (e) => {
+    if (e.target === modal) {
+        modal.style.display = 'none';
+    }
+}
